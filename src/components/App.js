@@ -3,6 +3,8 @@ import React from "react";
 import "./App.css";
 import "./SearchBar";
 import SearchBar from "./SearchBar";
+import SearchResults from "./SearchResults";
+import Nominations from "./Nominations";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       </header> */}
       <h1>The Shoppies</h1>
       <SearchBar />
+      <SearchResults />
+      <Nominations />
     </div>
   );
 }
