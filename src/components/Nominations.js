@@ -1,7 +1,14 @@
 import React from "react";
 
+import List from "./List";
+
 const Nominations = () => {
-  return <h2>Nominations</h2>;
+  return (
+    <div>
+      <h2>Nominations</h2>
+      <List />
+    </div>
+  );
 };
 
 export default Nominations;
