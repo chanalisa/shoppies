@@ -20,6 +20,7 @@ class App extends React.Component {
     this.setState({
       searchInput,
     });
+    console.log(this.state);
   }
 
   render() {
