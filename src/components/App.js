@@ -1,9 +1,13 @@
 import React from "react";
+import axios from "axios";
+
 import "./App.css";
 import "./SearchBar";
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 import Nominations from "./Nominations";
+
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 class App extends React.Component {
   constructor(props) {
@@ -16,20 +20,30 @@ class App extends React.Component {
     this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
   }
 
-  handleSearchInputChange(searchInput) {
+  async handleSearchInputChange(searchInput) {
     this.setState({
       searchInput,
     });
-    console.log(this.state);
+
+    const { data } = await axios.get(
+      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}&page=29`
+    );
+    if (data.Response === "True") {
+      this.setState({
+        searchResults: [...data.Search],
+      });
+    } else {
+    }
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <h1>The Shoppies</h1>
         <SearchBar onSearchInputChange={this.handleSearchInputChange} />
-        <SearchResults />
-        <Nominations />
+        <SearchResults searchResults={this.state.searchResults} />
+        <Nominations nominations={this.state.nominations} />
       </div>
     );
   }

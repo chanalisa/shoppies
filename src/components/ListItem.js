@@ -1,10 +1,10 @@
 import React from "react";
 
-const ListItem = () => {
+const ListItem = (props) => {
   return (
-    <div>
-      <button></button>
-    </div>
+    <li>
+      <button>Nominate</button> {props.searchResult.Title}
+    </li>
   );
 };
 
