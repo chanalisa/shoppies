@@ -1,0 +1,8 @@
+@import "../../../public/sass/main.scss";
+
+.List {
+  padding-left: calc(#{$padding-in-card} * 2);
+  font-size: $small-font-size;
+  line-height: $small-line-height;
+  font-weight: $small-font-weight;
+}
