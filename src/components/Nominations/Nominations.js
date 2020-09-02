@@ -1,11 +1,12 @@
 import React from "react";
 
+import "./Nominations.scss";
 import List from "../List/List";
 
 const Nominations = (props) => {
   return (
-    <div>
-      <h2>Nominations</h2>
+    <div className="Nominations">
+      <div className="card-heading">Nominations</div>
       <List nominations={props.nominations} />
     </div>
   );

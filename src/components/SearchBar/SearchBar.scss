@@ -2,8 +2,9 @@
 
 .SearchBar {
   background-color: $color-white;
-  display: block;
   padding: $padding-in-card;
+  margin-bottom: $gutter-vertical;
+  font-size: $small-font-size;
   border-radius: $border-radius;
   -webkit-border-radius: $border-radius;
   -moz-border-radius: $border-radius;
@@ -11,9 +12,8 @@
   -o-border-radius: $border-radius;
 }
 
-.searchForm {
-  font-size: $small-font-size;
-  .formLabel {
+.search-form {
+  .form-label {
     padding-bottom: $spacing-form-label;
   }
   ion-icon {
@@ -23,6 +23,7 @@
     color: #637381;
   }
   input {
+    width: 100%;
     font-size: $small-font-size;
     padding: $gutter-form-vertical $gutter-form-horizontal;
     padding-left: calc(#{$gutter-form-horizontal} + 2.4rem);

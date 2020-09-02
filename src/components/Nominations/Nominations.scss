@@ -1,0 +1,12 @@
+@import "../../../public/sass/main.scss";
+
+.Nominations {
+  background-color: $color-white;
+  padding: $padding-in-card;
+  margin-bottom: $gutter-vertical;
+  border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  -o-border-radius: $border-radius;
+}

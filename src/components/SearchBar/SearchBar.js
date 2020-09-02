@@ -16,9 +16,9 @@ class SearchBar extends React.Component {
     console.log(this.props);
     return (
       <div className="SearchBar">
-        <form className="searchForm">
+        <form className="search-form">
           <label>
-            <div className="formLabel">Movie title</div>
+            <div className="form-label">Movie title</div>
             <ion-icon name="search-outline"></ion-icon>
             <input
               type="text"
