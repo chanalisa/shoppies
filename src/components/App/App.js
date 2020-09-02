@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
 
-import "./App.css";
-import "./SearchBar";
-import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
-import Nominations from "./Nominations";
+import "./App.scss";
+import "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
+import SearchResults from "../SearchResults/SearchResults";
+import Nominations from "../Nominations/Nominations";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 

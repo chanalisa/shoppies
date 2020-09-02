@@ -1,5 +1,9 @@
+@import "../../../public/sass/main.scss";
+
 .App {
-  text-align: center;
+  height: 95vh;
+  margin: 0 auto;
+  max-width: $grid-width;
 }
 
 .App-logo {

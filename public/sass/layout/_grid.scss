@@ -1,0 +1,25 @@
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  /* This selects everything except for the last child. */
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  /* This will select all elements where the class attributes begin with "col-". 
+        *= indicates includes
+        $= indicates ends with */
+  /* The calc function allows for operations with mixed units.
+        If using a variable within calc, the variable must be wrapped in hash followed my curly brackets. */
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import List from "./List";
+import List from "../List/List";
 
 const Nominations = (props) => {
   return (
