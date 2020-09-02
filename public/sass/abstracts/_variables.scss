@@ -5,25 +5,42 @@ $color-primary-dark: #1976d2;
 $color-primary-accent: #448aff;
 
 // GREY
+$color-white: #fff;
 $color-grey-lighter: #f9fafb;
 $color-grey-light: #f4f6f8;
 $color-grey-sky: #dfe3e8;
 $color-grey-dark: #c4cdd5;
 
-$color-red: #f44336;
-$color-red-light: #ffcdd2;
-$color-red-dark: #d32f2f;
-$color-red-accent: #ff5252;
-
-$color-green: #4caf50;
-$color-green-light: #c8e6c9;
-$color-green-dark: #388e3c;
-$color-green-accent: #4caf50;
-
 // FONT
-$default-font-size: 1.6rem;
+$default-font-size: 2.6rem;
+$default-line-height: 3.2rem;
+$default-font-weight: 400;
+
+$small-font-size: 2rem;
+$small-line-height: 2.4rem;
+$small-font-weight: 400;
+
+$large-font-size: 2.8rem;
+$large-line-height: 3.2rem;
+$large-font-weight: 500;
+
+$xlarge-font-size: 4.2rem;
+$xlarge-line-height: 4.4rem;
+$xlarge-font-weight: 500;
 
 // GRID
-$grid-width: 90rem;
-$gutter-horizontal: 6rem;
+$gutter-horizontal: 3.2rem;
 $gutter-vertical: 4rem;
+
+$spacing: 1.6rem;
+$spacing-loose: 2rem;
+
+$spacing-form-label: 0.4rem;
+$gutter-form-horizontal: 1.2rem;
+$gutter-form-vertical: 0.8rem;
+
+$padding-in-card: 2rem;
+
+// BORDER
+$border-width: 0.1rem;
+$border-radius: 0.6rem;

@@ -1,0 +1,37 @@
+@import "../../../public/sass/main.scss";
+
+.SearchBar {
+  background-color: $color-white;
+  display: block;
+  padding: $padding-in-card;
+  border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  -o-border-radius: $border-radius;
+}
+
+.searchForm {
+  font-size: $small-font-size;
+  .formLabel {
+    padding-bottom: $spacing-form-label;
+  }
+  ion-icon {
+    position: absolute;
+    z-index: 1;
+    padding: 1rem;
+    color: #637381;
+  }
+  input {
+    font-size: $small-font-size;
+    padding: $gutter-form-vertical $gutter-form-horizontal;
+    padding-left: calc(#{$gutter-form-horizontal} + 2.4rem);
+    position: relative;
+    border: $border-width solid $color-grey-dark;
+    border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+  }
+}

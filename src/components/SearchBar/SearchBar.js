@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./SearchBar.scss";
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +15,10 @@ class SearchBar extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div className="SearchBar row">
-        <form>
+      <div className="SearchBar">
+        <form className="searchForm">
           <label>
-            Movie title
+            <div className="formLabel">Movie title</div>
             <ion-icon name="search-outline"></ion-icon>
             <input
               type="text"

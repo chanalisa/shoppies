@@ -1,9 +1,17 @@
 @import "../../../public/sass/main.scss";
 
 .App {
-  height: 95vh;
+  height: 100vh;
   margin: 0 auto;
-  max-width: $grid-width;
+  background-color: $color-grey-light;
+  padding: $gutter-vertical $gutter-horizontal;
+}
+
+.heading-primary {
+  font-size: $xlarge-font-size;
+  line-height: $xlarge-line-height;
+  font-weight: $xlarge-font-weight;
+  margin-bottom: $spacing-loose;
 }
 
 .App-logo {

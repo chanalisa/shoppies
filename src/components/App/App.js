@@ -40,7 +40,7 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div className="App">
-        <h1>The Shoppies</h1>
+        <h1 className="heading-primary">The Shoppies</h1>
         <SearchBar onSearchInputChange={this.handleSearchInputChange} />
         <SearchResults searchResults={this.state.searchResults} />
         <Nominations nominations={this.state.nominations} />
