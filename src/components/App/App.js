@@ -42,8 +42,10 @@ class App extends React.Component {
       <div className="App">
         <h1 className="heading-primary">The Shoppies</h1>
         <SearchBar onSearchInputChange={this.handleSearchInputChange} />
-        <SearchResults searchResults={this.state.searchResults} />
-        <Nominations nominations={this.state.nominations} />
+        <div className="row">
+          <SearchResults searchResults={this.state.searchResults} />
+          <Nominations nominations={this.state.nominations} />
+        </div>
       </div>
     );
   }

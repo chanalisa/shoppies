@@ -6,19 +6,14 @@
     margin-bottom: $gutter-vertical;
   }
 
-  /* This will select all elements where the class attributes begin with "col-". 
-        *= indicates includes
-        $= indicates ends with */
   /* The calc function allows for operations with mixed units.
         If using a variable within calc, the variable must be wrapped in hash followed my curly brackets. */
-  [class^="col-"] {
+  .col-1-of-2 {
+    width: calc((100% - #{$spacing-loose}) / 2);
     float: left;
 
     &:not(:last-child) {
-      margin-right: $gutter-horizontal;
+      margin-right: $spacing-loose;
     }
-  }
-  .col-1-of-2 {
-    width: calc((100% - #{$gutter-horizontal}) / 2);
   }
 }
