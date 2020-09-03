@@ -18,6 +18,7 @@ class App extends React.Component {
       nominations: [],
     };
     this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
+    this.handleNominate = this.handleNominate.bind(this);
   }
 
   async handleSearchInputChange(searchInput) {
@@ -36,14 +37,27 @@ class App extends React.Component {
     }
   }
 
-  render() {
+  async handleNominate(imdbID) {
+    const { data } = await axios.get(
+      `http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`
+    );
+    this.setState({
+      nominations: [...this.state.nominations, data],
+    });
     console.log(this.state);
+  }
+
+  render() {
     return (
       <div className="App">
         <h1 className="heading-primary">The Shoppies</h1>
         <SearchBar onSearchInputChange={this.handleSearchInputChange} />
         <div className="row">
-          <SearchResults searchResults={this.state.searchResults} />
+          <SearchResults
+            searchInput={this.state.searchInput}
+            searchResults={this.state.searchResults}
+            onNominate={this.handleNominate}
+          />
           <Nominations nominations={this.state.nominations} />
         </div>
       </div>

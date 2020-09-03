@@ -3,12 +3,27 @@ import React from "react";
 import "./ListItem.scss";
 
 const ListItem = (props) => {
+  function handleClick(event) {
+    props.action(event.target.value);
+  }
   return (
-    // <li className="ListItem">
-    //   <button>Nominate</button> {props.searchResult.Title}
-    // </li>
     <li className="ListItem">
-      <button>Nominate</button> {props.title}
+      {props.searchResult ? (
+        <div>
+          <button onClick={handleClick} value={props.searchResult.imdbID}>
+            Nominate
+          </button>{" "}
+          {props.searchResult.Title} ({props.searchResult.Year})
+        </div>
+      ) : (
+        <div>
+          <button onClick={props.action} value={props.nomination}>
+            Remove
+          </button>{" "}
+          {props.nomination.Title} ({props.nomination.Year})
+        </div>
+      )}
+      {/* <button>Nominate</button> Title (Year) */}
     </li>
   );
 };

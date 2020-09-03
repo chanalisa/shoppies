@@ -13,7 +13,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="SearchBar card">
         <form className="search-form">

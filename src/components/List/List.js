@@ -8,17 +8,25 @@ const List = (props) => {
   return (
     <ul className="List">
       {props.searchResults
-        ? props.searchResults.length &&
-          props.searchResults.map((searchResult) => (
-            <ListItem searchResult={searchResult} />
-          ))
-        : props.nominations.length &&
-          props.nominations.map((nomination) => (
+        ? props.searchResults.length
+          ? props.searchResults.map((searchResult) => (
+              <ListItem
+                action={props.onNominate}
+                searchResult={searchResult}
+                key={searchResult.imdbID}
+              />
+            ))
+          : ""
+        : props.nominations.length
+        ? props.nominations.map((nomination) => (
             <ListItem nomination={nomination} />
-          ))}
-      <ListItem title="test" />
-      <ListItem title="test" />
-      <ListItem title="test" />
+          ))
+        : ""}
+      {/* <ListItem />
+      <ListItem />
+      <ListItem />
+      <ListItem />
+      <ListItem /> */}
     </ul>
   );
 };
