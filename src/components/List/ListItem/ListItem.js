@@ -8,7 +8,7 @@ const ListItem = (props) => {
   }
   return (
     <li className="ListItem">
-      {props.searchResult ? (
+      {/* {props.searchResult ? (
         <div>
           <button onClick={handleClick} value={props.searchResult.imdbID}>
             Nominate
@@ -22,7 +22,11 @@ const ListItem = (props) => {
           </button>{" "}
           {props.nomination.Title} ({props.nomination.Year})
         </div>
-      )}
+      )} */}
+      <button onClick={handleClick} value={props.movie.imdbID}>
+        Nominate
+      </button>{" "}
+      {props.movie.Title} ({props.movie.Year})
       {/* <button>Nominate</button> Title (Year) */}
     </li>
   );

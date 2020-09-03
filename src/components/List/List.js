@@ -12,14 +12,14 @@ const List = (props) => {
           ? props.searchResults.map((searchResult) => (
               <ListItem
                 action={props.onNominate}
-                searchResult={searchResult}
+                movie={searchResult}
                 key={searchResult.imdbID}
               />
             ))
           : ""
         : props.nominations.length
         ? props.nominations.map((nomination) => (
-            <ListItem nomination={nomination} />
+            <ListItem movie={nomination} key={nomination.imdbID} />
           ))
         : ""}
       {/* <ListItem />
