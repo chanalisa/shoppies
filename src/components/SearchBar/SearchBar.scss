@@ -1,15 +1,8 @@
 @import "../../../public/sass/main.scss";
 
 .SearchBar {
-  background-color: $color-white;
-  padding: $padding-in-card;
   margin-bottom: $gutter-vertical;
   font-size: $small-font-size;
-  border-radius: $border-radius;
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  -ms-border-radius: $border-radius;
-  -o-border-radius: $border-radius;
 }
 
 .search-form {

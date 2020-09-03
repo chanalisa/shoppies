@@ -1,0 +1,10 @@
+.card {
+  background-color: $color-white;
+  padding: $padding-in-card;
+  border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  -o-border-radius: $border-radius;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}

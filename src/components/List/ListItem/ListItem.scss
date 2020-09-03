@@ -2,4 +2,14 @@
 
 .ListItem {
   margin-bottom: $spacing;
+
+  button {
+    border: $border-width solid $color-grey-dark;
+    border-radius: $border-radius;
+    padding: 0.8rem 1.2rem;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+  }
 }
