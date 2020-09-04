@@ -27,7 +27,6 @@ const ListItem = (props) => {
         Nominate
       </button>{" "}
       {props.movie.Title} ({props.movie.Year})
-      {/* <button>Nominate</button> Title (Year) */}
     </li>
   );
 };

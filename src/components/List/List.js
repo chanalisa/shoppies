@@ -19,7 +19,11 @@ const List = (props) => {
           : ""
         : props.nominations.length
         ? props.nominations.map((nomination) => (
-            <ListItem movie={nomination} key={nomination.imdbID} />
+            <ListItem
+              action={props.onRemove}
+              movie={nomination}
+              key={nomination.imdbID}
+            />
           ))
         : ""}
       {/* <ListItem />

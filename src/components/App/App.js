@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
     this.handleNominate = this.handleNominate.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   async handleSearchInputChange(searchInput) {
@@ -34,6 +35,12 @@ class App extends React.Component {
         searchResults: [...data.Search],
       });
     } else {
+      // Error: "Movie not found!"
+      // "inck"
+      // Error: "Incorrect IMDb ID."
+      // ""
+      // Error: "Too many results."
+      // "i"
     }
   }
 
@@ -44,10 +51,18 @@ class App extends React.Component {
     this.setState({
       nominations: [...this.state.nominations, data],
     });
-    console.log(this.state);
+  }
+
+  handleRemove(imdbID) {
+    this.setState({
+      nominations: this.state.nominations.filter(
+        (movie) => movie.imdbID !== imdbID
+      ),
+    });
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <h1 className="heading-primary">The Shoppies</h1>
@@ -58,7 +73,10 @@ class App extends React.Component {
             searchResults={this.state.searchResults}
             onNominate={this.handleNominate}
           />
-          <Nominations nominations={this.state.nominations} />
+          <Nominations
+            nominations={this.state.nominations}
+            onRemove={this.handleRemove}
+          />
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ const Nominations = (props) => {
   return (
     <div className="Nominations card col-1-of-2">
       <div className="card-heading">Nominations</div>
-      <List nominations={props.nominations} />
+      <List onRemove={props.onRemove} nominations={props.nominations} />
     </div>
   );
 };
