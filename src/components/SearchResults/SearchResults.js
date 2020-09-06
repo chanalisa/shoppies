@@ -10,9 +10,10 @@ const SearchResults = (props) => {
         Results for "{props.searchResults.length ? props.searchInput : ""}"
       </div>
       <List
-        onNominate={props.onNominate}
-        searchResults={props.searchResults}
-        nominations={props.nominations}
+        buttonType="Nominate"
+        buttonAction={props.onNominate}
+        movieList={props.searchResults}
+        disableButtons={props.nominations}
       />
     </div>
   );

@@ -7,35 +7,23 @@ const List = (props) => {
   console.log(props);
   return (
     <ul className="List">
-      {props.searchResults
-        ? props.searchResults.length
-          ? props.searchResults.map((searchResult) => (
-              <ListItem
-                action={props.onNominate}
-                movie={searchResult}
-                key={searchResult.imdbID}
-                buttonDisabled={
-                  props.nominations.findIndex(
-                    (movie) => movie.imdbID === searchResult.imdbID
-                  ) !== -1 && "disabled"
-                }
-              />
-            ))
-          : ""
-        : props.nominations.length
-        ? props.nominations.map((nomination) => (
+      {props.movieList && props.movieList.length
+        ? props.movieList.map((movie) => (
             <ListItem
-              action={props.onRemove}
-              movie={nomination}
-              key={nomination.imdbID}
+              buttonType={props.buttonType}
+              buttonAction={props.buttonAction}
+              movie={movie}
+              key={movie.imdbID}
+              buttonDisabled={
+                props.disableButtons && props.disableButtons.length
+                  ? props.disableButtons.findIndex(
+                      (disableButton) => disableButton.imdbID === movie.imdbID
+                    ) !== -1 && "disabled"
+                  : ""
+              }
             />
           ))
         : ""}
-      {/* <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem /> */}
     </ul>
   );
 };

@@ -46,7 +46,7 @@ class App extends React.Component {
 
   async handleNominate(imdbID) {
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`
+      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&i=${imdbID}`
     );
     this.setState({
       nominations: [...this.state.nominations, data],
