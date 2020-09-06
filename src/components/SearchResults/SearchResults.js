@@ -9,7 +9,11 @@ const SearchResults = (props) => {
       <div className="card-heading">
         Results for "{props.searchResults.length ? props.searchInput : ""}"
       </div>
-      <List onNominate={props.onNominate} searchResults={props.searchResults} />
+      <List
+        onNominate={props.onNominate}
+        searchResults={props.searchResults}
+        nominations={props.nominations}
+      />
     </div>
   );
 };

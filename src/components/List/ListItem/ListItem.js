@@ -23,7 +23,11 @@ const ListItem = (props) => {
           {props.nomination.Title} ({props.nomination.Year})
         </div>
       )} */}
-      <button onClick={handleClick} value={props.movie.imdbID}>
+      <button
+        onClick={handleClick}
+        value={props.movie.imdbID}
+        disabled={props.buttonDisabled}
+      >
         Nominate
       </button>{" "}
       {props.movie.Title} ({props.movie.Year})

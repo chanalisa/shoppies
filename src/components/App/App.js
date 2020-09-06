@@ -71,6 +71,7 @@ class App extends React.Component {
           <SearchResults
             searchInput={this.state.searchInput}
             searchResults={this.state.searchResults}
+            nominations={this.state.nominations}
             onNominate={this.handleNominate}
           />
           <Nominations

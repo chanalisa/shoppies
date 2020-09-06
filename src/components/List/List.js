@@ -14,6 +14,11 @@ const List = (props) => {
                 action={props.onNominate}
                 movie={searchResult}
                 key={searchResult.imdbID}
+                buttonDisabled={
+                  props.nominations.findIndex(
+                    (movie) => movie.imdbID === searchResult.imdbID
+                  ) !== -1 && "disabled"
+                }
               />
             ))
           : ""
