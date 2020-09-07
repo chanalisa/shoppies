@@ -1,0 +1,12 @@
+@import "../../../public/sass/main.scss";
+
+.CardState {
+  padding: $spacing-loose 0;
+  text-align: center;
+}
+
+.card-info {
+  font-size: 1.4rem;
+  line-height: $smaller-line-height;
+  font-weight: $default-font-weight;
+}

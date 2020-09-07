@@ -13,7 +13,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchError: "",
+      searchError: "Start typing to search.",
+      searchErrorDetail:
+        "Use the Search section to find films you want to add to your nomination list.",
       searchInput: "",
       searchResults: [],
       maxNominations: false,
@@ -35,19 +37,30 @@ class App extends React.Component {
     if (data.Response === "True") {
       this.setState({
         searchResults: [...data.Search],
+        searchError: "",
+        searchErrorDetail: "",
       });
     } else {
+      const searchError = searchInput.length
+        ? data.Error
+        : "Start typing to search.";
+      const searchErrorDetail = (searchError) => {
+        switch (searchError) {
+          case "Start typing to search.":
+            return "Use the Search section to find films you want to add to your nomination list.";
+          case "Too many results.":
+            return "There are too many results for this search. Try a more specific search.";
+          case "Movie not found!":
+            return "Make sure that all words in the search are spelled correctly.";
+          default:
+            return "Use the Search section to find films you want to add to your nomination list.";
+        }
+      };
+
       this.setState({
         searchResults: [],
-      });
-      // Error: "Movie not found!"
-      // "inck"
-      // Error: "Incorrect IMDb ID."
-      // ""
-      // Error: "Too many results."
-      // "i"
-      this.setState({
-        searchError: data.Error,
+        searchError,
+        searchErrorDetail: searchErrorDetail(searchError),
       });
     }
   }
@@ -80,6 +93,7 @@ class App extends React.Component {
         <div className="row">
           <SearchResults
             searchError={this.state.searchError}
+            searchErrorDetail={this.state.searchErrorDetail}
             searchInput={this.state.searchInput}
             searchResults={this.state.searchResults}
             nominations={this.state.nominations}

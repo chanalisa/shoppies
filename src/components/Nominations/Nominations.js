@@ -3,13 +3,17 @@ import React from "react";
 import "./Nominations.scss";
 import Banner from "../Banner/Banner";
 import List from "../List/List";
-import ResultState from "../ResultState/ResultState";
+import CardState from "../CardState/CardState";
 
 const Nominations = (props) => {
   return (
     <div className="Nominations card col-1-of-2">
-      <h2 className="card-heading">Nominations</h2>
-      {props.nominations.length === 5 && <Banner />}
+      {props.nominations.length ? (
+        <h2 className="card-heading">Nominations</h2>
+      ) : (
+        ""
+      )}
+      {props.nominations.length >= 5 && <Banner />}
       {props.nominations.length ? (
         <List
           buttonType="Remove"
@@ -17,7 +21,10 @@ const Nominations = (props) => {
           movieList={props.nominations}
         />
       ) : (
-        <ResultState />
+        <CardState
+          name="No nominations yet"
+          detail="Add up to 5 movies to your list of nominations."
+        />
       )}
     </div>
   );
