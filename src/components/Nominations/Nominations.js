@@ -22,7 +22,7 @@ const Nominations = (props) => {
         />
       ) : (
         <CardState
-          name="No nominations yet"
+          name="No nominations yet."
           detail="Add up to 5 movies to your list of nominations."
         />
       )}

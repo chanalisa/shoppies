@@ -27,6 +27,7 @@ class App extends React.Component {
   }
 
   async handleSearchInputChange(searchInput) {
+    searchInput.split(" ").join("+");
     this.setState({
       searchInput,
     });
@@ -34,12 +35,28 @@ class App extends React.Component {
     const { data } = await axios.get(
       `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}`
     );
+
     if (data.Response === "True") {
       this.setState({
         searchResults: [...data.Search],
         searchError: "",
         searchErrorDetail: "",
       });
+      if (data.totalResults > 10) {
+        let page = 1;
+        while (page * 10 < data.totalResults) {
+          page++;
+          const moreData = await axios.get(
+            `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}&page=${page}`
+          );
+          this.setState({
+            searchResults: [
+              ...this.state.searchResults,
+              ...moreData.data.Search,
+            ],
+          });
+        }
+      }
     } else {
       const searchError = searchInput.length
         ? data.Error
@@ -53,10 +70,9 @@ class App extends React.Component {
           case "Movie not found!":
             return "Make sure that all words in the search are spelled correctly.";
           default:
-            return "Use the Search section to find films you want to add to your nomination list.";
+            return "";
         }
       };
-
       this.setState({
         searchResults: [],
         searchError,
