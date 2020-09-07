@@ -2,13 +2,18 @@ import React from "react";
 
 import "./SearchResults.scss";
 import List from "../List/List";
+import ResultState from "../ResultState/ResultState";
 
 const SearchResults = (props) => {
   return (
     <div className="SearchResults card col-1-of-2">
-      <div className="card-heading">
-        Results for "{props.searchResults.length ? props.searchInput : ""}"
-      </div>
+      <h2 className="card-heading">
+        {props.searchResults.length ? (
+          `Results for "${props.searchInput}"`
+        ) : (
+          <ResultState details={props.searchError} />
+        )}
+      </h2>
       <List
         buttonType="Nominate"
         buttonAction={props.onNominate}

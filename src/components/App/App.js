@@ -13,8 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchError: "",
       searchInput: "",
       searchResults: [],
+      maxNominations: false,
       nominations: [],
     };
     this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
@@ -28,19 +30,25 @@ class App extends React.Component {
     });
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}&page=29`
+      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}`
     );
     if (data.Response === "True") {
       this.setState({
         searchResults: [...data.Search],
       });
     } else {
+      this.setState({
+        searchResults: [],
+      });
       // Error: "Movie not found!"
       // "inck"
       // Error: "Incorrect IMDb ID."
       // ""
       // Error: "Too many results."
       // "i"
+      this.setState({
+        searchError: data.Error,
+      });
     }
   }
 
@@ -50,6 +58,7 @@ class App extends React.Component {
     );
     this.setState({
       nominations: [...this.state.nominations, data],
+      maxNominations: this.state.nominations.length === 5,
     });
   }
 
@@ -58,6 +67,7 @@ class App extends React.Component {
       nominations: this.state.nominations.filter(
         (movie) => movie.imdbID !== imdbID
       ),
+      maxNominations: this.state.nominations.length === 5 ? true : false,
     });
   }
 
@@ -69,6 +79,7 @@ class App extends React.Component {
         <SearchBar onSearchInputChange={this.handleSearchInputChange} />
         <div className="row">
           <SearchResults
+            searchError={this.state.searchError}
             searchInput={this.state.searchInput}
             searchResults={this.state.searchResults}
             nominations={this.state.nominations}

@@ -1,0 +1,25 @@
+@import "../../../public/sass/main.scss";
+
+.Banner {
+  padding: $spacing;
+  margin-bottom: $spacing-loose;
+  background-color: $color-green-lighter;
+  border-top: 0.3rem solid $color-green;
+  border-radius: 0 0 0.3rem 0.3rem;
+  -webkit-border-radius: 0 0 0.3rem 0.3rem;
+  -moz-border-radius: 0 0 0.3rem 0.3rem;
+  -ms-border-radius: 0 0 0.3rem 0.3rem;
+  -o-border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.banner-heading {
+  font-size: $smaller-font-size;
+  line-height: $smaller-line-height;
+  font-weight: 600;
+}
+
+.banner-info {
+  font-size: 1.4rem;
+  line-height: $smaller-line-height;
+  font-weight: $default-font-weight;
+}

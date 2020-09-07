@@ -4,7 +4,6 @@ import "./List.scss";
 import ListItem from "./ListItem/ListItem";
 
 const List = (props) => {
-  console.log(props);
   return (
     <ul className="List">
       {props.movieList && props.movieList.length
@@ -16,9 +15,12 @@ const List = (props) => {
               key={movie.imdbID}
               buttonDisabled={
                 props.disableButtons && props.disableButtons.length
-                  ? props.disableButtons.findIndex(
-                      (disableButton) => disableButton.imdbID === movie.imdbID
-                    ) !== -1 && "disabled"
+                  ? props.disableButtons.length < 5 &&
+                    props.disableButtons.length > 0
+                    ? props.disableButtons.findIndex(
+                        (disableButton) => disableButton.imdbID === movie.imdbID
+                      ) !== -1 && "disabled"
+                    : props.disableButtons.length >= 5 && "disabled"
                   : ""
               }
             />
