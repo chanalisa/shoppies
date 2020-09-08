@@ -1,5 +1,12 @@
 # Shopify's Intern Challenge (Winter 2021)
 
+## Table of Contentss
+
+1. [Demo](https://github.com/chanalisa/shoppies#demo)
+2. [The Challenge](https://github.com/chanalisa/shoppies#the-challenge)
+3. [Technical Requirements](https://github.com/chanalisa/shoppies#technical-requirements)
+4. [Tech Stack](https://github.com/chanalisa/shoppies#tech-stack)
+
 ## Demo
 
 [View Demo](https://master.d1aq5lbni8776s.amplifyapp.com/)
