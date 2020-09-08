@@ -109,7 +109,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <h1 className="heading-primary">The Shoppies</h1>
