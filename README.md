@@ -2,16 +2,21 @@
 
 ## Demo
 
+[View Demo](https://master.d1aq5lbni8776s.amplifyapp.com/)
+
 ## The Challenge
+
 We need a webpage that can search [OMDB](http://www.omdbapi.com/) for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
 We'd like a simple to use interface that makes it easy to:
+
 - Search OMDB and display the results (movies only)
 - Add a movie from the search results to our nomination list
 - View the list of films already nominated
 - Remove a nominee from the nomination list
 
 ## Technical Requirements
+
 1. Search results should come from OMDB's API (free API key: http://www.omdbapi.com/apikey.aspx).
 2. Each search result should list at least its title, year of release and a button to nominate that film.
 3. Updates to the search terms should update the result list
@@ -20,9 +25,11 @@ We'd like a simple to use interface that makes it easy to:
 6. Display a banner when the user has 5 nominations.
 
 ## Tech Stack
+
 - [React.js](https://reactjs.org/) (bootstrapped with [Create React App](https://github.com/facebook/create-react-app))
 - [Axios](https://github.com/axios/axios)
 - [Sass](https://sass-lang.com/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
 
 ## Available Scripts
 
