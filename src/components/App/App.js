@@ -32,7 +32,7 @@ class App extends React.Component {
     });
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
+      `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
         .split(" ")
         .join("+")}`
     );
@@ -50,7 +50,7 @@ class App extends React.Component {
           if (this.state.searchInput === prevSearchInput) {
             page++;
             const moreData = await axios.get(
-              `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
+              `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
                 .split(" ")
                 .join("+")}&page=${page}`
             );
