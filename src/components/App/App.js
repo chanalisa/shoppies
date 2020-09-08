@@ -27,13 +27,14 @@ class App extends React.Component {
   }
 
   async handleSearchInputChange(searchInput) {
-    searchInput.split(" ").join("+");
     this.setState({
       searchInput,
     });
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}`
+      `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
+        .split(" ")
+        .join("+")}`
     );
 
     if (data.Response === "True") {
@@ -44,17 +45,24 @@ class App extends React.Component {
       });
       if (data.totalResults > 10) {
         let page = 1;
+        const prevSearchInput = this.state.searchInput;
         while (page * 10 < data.totalResults) {
-          page++;
-          const moreData = await axios.get(
-            `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput}&page=${page}`
-          );
-          this.setState({
-            searchResults: [
-              ...this.state.searchResults,
-              ...moreData.data.Search,
-            ],
-          });
+          if (this.state.searchInput === prevSearchInput) {
+            page++;
+            const moreData = await axios.get(
+              `http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${searchInput
+                .split(" ")
+                .join("+")}&page=${page}`
+            );
+            this.setState({
+              searchResults: [
+                ...this.state.searchResults,
+                ...moreData.data.Search,
+              ],
+            });
+          } else {
+            break;
+          }
         }
       }
     } else {
