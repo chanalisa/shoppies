@@ -11,7 +11,7 @@
 
 [View Demo](https://master.d1aq5lbni8776s.amplifyapp.com/)
 
-### The Challenge
+## The Challenge
 
 We need a webpage that can search [OMDB](http://www.omdbapi.com/) for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
@@ -22,7 +22,7 @@ We'd like a simple to use interface that makes it easy to:
 - View the list of films already nominated
 - Remove a nominee from the nomination list
 
-## Technical Requirements
+### Technical Requirements
 
 1. Search results should come from OMDB's API (free API key: http://www.omdbapi.com/apikey.aspx).
 2. Each search result should list at least its title, year of release and a button to nominate that film.
