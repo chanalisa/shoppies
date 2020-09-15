@@ -1,6 +1,6 @@
 # Shopify's Intern Challenge (Winter 2021)
 
-## Table of Contentss
+## Table of Contents
 
 1. [Demo](https://github.com/chanalisa/shoppies#demo)
 2. [The Challenge](https://github.com/chanalisa/shoppies#the-challenge)
