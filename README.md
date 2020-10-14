@@ -13,7 +13,7 @@
 
 ## The Challenge
 
-We need a webpage that can search [OMDB](http://www.omdbapi.com/) for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
+We need a webpage that can search [OMDb](http://www.omdbapi.com/) for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
 We'd like a simple to use interface that makes it easy to:
 
@@ -24,7 +24,7 @@ We'd like a simple to use interface that makes it easy to:
 
 ### Technical Requirements
 
-1. Search results should come from OMDB's API (free API key: http://www.omdbapi.com/apikey.aspx).
+1. Search results should come from OMDb's API (free API key: http://www.omdbapi.com/apikey.aspx).
 2. Each search result should list at least its title, year of release and a button to nominate that film.
 3. Updates to the search terms should update the result list
 4. Movies in search results can be added and removed from the nomination list.
